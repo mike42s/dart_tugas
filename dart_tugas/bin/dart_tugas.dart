@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 //FUNCTION
@@ -65,11 +66,58 @@ int fungsi_pohon(int input) {
   return 0;
 }
 
+int fungsi_pohon2(int input) {
+  int a = input;
+  int b = input * 2;
+  int counter = 0;
+  int c1 = 0, c2 = 0;
+  int b1 = 0, b2 = 0;
+  if (input > 9) {
+    b1 = 9;
+    c2 = 9;
+    b2 = 1;
+    c1 = 1;
+  } else {
+    b1 = input;
+    c2 = input;
+    b2 = 1;
+    c1 = 1;
+  }
+  for (int i = 1; i <= a; i++) {
+    for (int j = a; j > 0; j--) {
+      if (j >= i) {
+        stdout.write("$c1");
+        c1++;
+        if (c1 > b1) {
+          c1 = b2;
+        }
+      } else {
+        stdout.write(" ");
+      }
+    }
+    for (int j = 1; j <= a; j++) {
+      if (j >= i) {
+        stdout.write("$c2");
+        c2--;
+        if (c2 < b2) {
+          c2 = b1;
+        }
+      } else {
+        stdout.write(" ");
+      }
+    }
+    stdout.write("\n");
+  }
+  return input;
+}
+
+// for (int j = 0; j < a; j++)
 //int fungsipohon2(int input) {}
 void main(List<String> arguments) {
   stdout.write("Masukkan Kata : ");
   String? Input = stdin.readLineSync();
   int angka = int.parse(Input!);
   print(angka);
-  fungsi_pohon(angka);
+  //fungsi_pohon(angka);
+  fungsi_pohon2(angka);
 }
