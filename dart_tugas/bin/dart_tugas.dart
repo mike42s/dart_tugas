@@ -130,13 +130,16 @@ int fungsi_pohon2(int input) {
   return input;
 }
 
-// for (int j = 0; j < a; j++)
-//int fungsipohon2(int input) {}
 void main(List<String> arguments) {
   stdout.write("Masukkan Kata : ");
   String? Input = stdin.readLineSync();
   int angka = int.parse(Input!);
   print(angka);
-  fungsi_pohon(angka);
-  //fungsi_pohon2(angka);
+  if (angka % 2 == 0) //Genap
+  {
+    fungsi_pohon2(angka);
+  } else {
+    //Ganjil
+    fungsi_pohon(angka);
+  }
 }
