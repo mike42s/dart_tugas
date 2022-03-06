@@ -4,6 +4,20 @@ import 'dart:io';
 //FUNCTION
 int fungsi_pohon(int input) {
   int counter = 0;
+  int c1 = 0, c2 = 0;
+  int b1 = 0, b2 = 0;
+  if (input > 9) {
+    b1 = 9;
+    c2 = 9;
+    b2 = 1;
+    c1 = 1;
+  } else {
+    b1 = input;
+    c2 = input;
+    b2 = 1;
+    c1 = 1;
+  }
+
   for (int i = 1; i <= input; i++) {
     if (input % 2 != 0) {
       if (i < (input / 2).round()) {
